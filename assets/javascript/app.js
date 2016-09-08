@@ -14,6 +14,9 @@ for (var i = 0; i < animals.length; i++){
 
 // output of images
 $('button').on('click', function() {
+
+		$('#animals').empty();
+
         var animal = $(this).data('animal');
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
@@ -34,7 +37,7 @@ $('button').on('click', function() {
 
 
                 for (var j = 0; j < results.length; j++) {
-  
+
                     var animalDiv = $('<div>');
 
                     var p = $('<p>').text("Rating: " + results[j].rating);
