@@ -37,15 +37,15 @@ $('button').on('click', function() {
   
                     var animalDiv = $('<div>');
 
-                    var p = $('<p>').text("Rating: " + results[i].rating);
+                    var p = $('<p>').text("Rating: " + results[j].rating);
 
                     var animalImage = $('<img>');
-                    animalImage.attr('src', results[i].images.fixed_height.url);
+                    animalImage.attr('src', results[j].images.fixed_height.url);
 
                     animalDiv.append(p);
                     animalDiv.append(animalImage);
 
-                    $('#animals').append(animalDiv);
+                    $('#animals').prepend(animalDiv);
                     
                 }
 
