@@ -65,6 +65,7 @@ $(document).on('click', '.initialButtons', function() {
             for (var j = 0; j < results.length; j++) {
 
                 var animalDiv = $('<div>');
+                animalDiv.addClass('col-md-4');
 
                 var p = $('<p>').text("Rating: " + results[j].rating);
 
