@@ -1,6 +1,9 @@
-var animals = ['panda', 'monkey', 'fox', 'rabbit', 'cat', 'bird'];
+// My topics array
+var topics = ['panda', 'monkey', 'fox', 'rabbit', 'cat', 'bird'];
+
 
 renderButtons();
+
 
 // Turns user input textbox into a button    LogMovieName
 $(document).on('click', '#addAnimal', function(){
@@ -12,7 +15,7 @@ $(document).on('click', '#addAnimal', function(){
     var animalInput = $('#animal-input').val().trim();
 
     // The animal from the textbox is then added to my array
-    animals.push(animalInput);
+    topics.push(animalInput);
     
     // Clicking animal buttons displays ratings and gifs
     renderButtons();
@@ -24,15 +27,16 @@ $(document).on('click', '#addAnimal', function(){
 
 // ANIMAL BUTTONS AT THE TOP OF THE PAGE: for loop loops through my array to create buttons with text and attributes
 function renderButtons(){ 
-    for (var i = 0; i < animals.length; i++){
+    for (var i = 0; i < topics.length; i++){
 
         var b = $('<button>') // create a button
         b.addClass('initialButtons btn-primary'); // add a class 
-        b.attr('data-animal', animals[i]); // add array indexes as a data-attribute
-        b.text(animals[i]); // text on initial buttons
+        b.attr('data-animal', topics[i]); // add array indexes as a data-attribute
+        b.text(topics[i]); // text on initial buttons
         $('#animalsButtons').append(b); // added button to the page
     }
 }
+
 
 // Rating and Image output
 $(document).on('click', '.initialButtons', function() {
@@ -65,14 +69,35 @@ $(document).on('click', '.initialButtons', function() {
                 var p = $('<p>').text("Rating: " + results[j].rating);
 
                 var animalImage = $('<img>');
-                animalImage.attr('src', results[j].images.fixed_width_small.url);
+                animalImage.attr('src', results[j].images.fixed_width_small_still.url);
+                animalImage.attr('data-still', results[j].images.fixed_width_small_still.url);
+                animalImage.attr('data-animate', results[j].images.fixed_width_small.url);
+                animalImage.attr('data-state', 'still');
+                animalImage.addClass('animalImage');
+
 
                 animalDiv.append(p);
                 animalDiv.append(animalImage);
 
-                $('#animals').prepend(animalDiv);
-                
+                $('#animals').prepend(animalDiv);        
+            
             }
 
+            
         });
+});
+
+
+// Changes the state of the gif image based on its current state
+$(document).on('click', '.animalImage', function(){
+    var state = $(this).attr('data-state');
+
+    if ( state == 'still'){
+        $(this).attr('src', $(this).data('animate'));
+        $(this).attr('data-state', 'animate');
+    }
+    else{
+        $(this).attr('src', $(this).data('still'));
+        $(this).attr('data-state', 'still');
+    }
 });
