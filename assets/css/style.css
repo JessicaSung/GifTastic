@@ -1,4 +1,3 @@
-.float {
-	float: left;
-	overflow: auto;
+body {
+	background-image: url("../images/background.png");
 }
