@@ -66,15 +66,17 @@ $(document).on('click', '.initialButtons', function() {
 
                 var animalDiv = $('<div>');
                 animalDiv.addClass('col-md-4');
+                animalDiv.addClass('height');
 
                 var p = $('<p>').text("Rating: " + results[j].rating);
 
                 var animalImage = $('<img>');
-                animalImage.attr('src', results[j].images.fixed_width_still.url);
-                animalImage.attr('data-still', results[j].images.fixed_width_still.url);
-                animalImage.attr('data-animate', results[j].images.fixed_width.url);
+                animalImage.attr('src', results[j].images.fixed_height_still.url);
+                animalImage.attr('data-still', results[j].images.fixed_height_still.url);
+                animalImage.attr('data-animate', results[j].images.fixed_height.url);
                 animalImage.attr('data-state', 'still');
                 animalImage.addClass('animalImage');
+                animalImage.addClass('img-responsive');
 
 
                 animalDiv.append(animalImage);
