@@ -77,8 +77,9 @@ $(document).on('click', '.initialButtons', function() {
                 animalImage.addClass('animalImage');
 
 
-                animalDiv.append(p);
                 animalDiv.append(animalImage);
+                animalDiv.append(p);
+                
 
                 $('#animals').prepend(animalDiv);        
             
