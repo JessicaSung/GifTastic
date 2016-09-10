@@ -2,7 +2,7 @@ var animals = ['panda', 'monkey', 'fox', 'rabbit', 'cat', 'bird'];
 
 renderButtons();
 
-// Turns user input textbox into a button    
+// Turns user input textbox into a button    LogMovieName
 $(document).on('click', '#addAnimal', function(){
 
     // Clear the div so that you don't have duplicate buttons
@@ -27,7 +27,7 @@ function renderButtons(){
     for (var i = 0; i < animals.length; i++){
 
         var b = $('<button>') // create a button
-        b.addClass('initialButtons'); // add a class 
+        b.addClass('initialButtons btn-primary'); // add a class 
         b.attr('data-animal', animals[i]); // add array indexes as a data-attribute
         b.text(animals[i]); // text on initial buttons
         $('#animalsButtons').append(b); // added button to the page
@@ -65,7 +65,7 @@ $(document).on('click', '.initialButtons', function() {
                 var p = $('<p>').text("Rating: " + results[j].rating);
 
                 var animalImage = $('<img>');
-                animalImage.attr('src', results[j].images.fixed_height.url);
+                animalImage.attr('src', results[j].images.fixed_width_small.url);
 
                 animalDiv.append(p);
                 animalDiv.append(animalImage);

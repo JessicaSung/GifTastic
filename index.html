@@ -8,19 +8,35 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>	
-	<!-- Animal buttons -->
-	<div id="animalsButtons"></div>
+	<div class="container"></div>
 
-	<!-- Side bar -->
-	<form id="animal-form">
-		<label for="animal-input">Add an animal</label>
-		<input type="text" id="animal-input"><br>
+		<!-- Prepopulated animal buttons -->
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Animal buttons -->
+				<div id="animalsButtons"></div>
+			</div>
+		</div>
 
-		<input id="addAnimal" type="submit" value="Submit">
-	</form>
+		<!-- Response data and sidebar -->
+		<div class="row">
+			<div class="col-md-8">
+				<!-- Area where animals will show up -->
+				<div id="animals"></div>
+			</div>
 
-	<!-- Area where animals will show up -->
-	<div id="animals"></div>
+			<div class="col-md-4">
+				<!-- Side bar -->
+				<form id="animal-form">
+					<label for="animal-input">Add an animal</label>
+					<input type="text" id="animal-input"><br>
+
+					<input id="addAnimal" type="submit" value="Submit" class="btn-primary">
+				</form>
+			</div>
+		</div>
+						
+	</div>
 
 <script   src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 
