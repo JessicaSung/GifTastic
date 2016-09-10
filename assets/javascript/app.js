@@ -54,3 +54,20 @@ $(document).on('click', '.initialButtons', function() {
 
         });
 });
+
+
+// Turns user input textbox into a button    
+$(document).on('click', '#addAnimal', function(){
+
+    // This line of code will grab the input from the textbox
+    var animalInput = $('#animal-input').val().trim();
+
+    // The animal from the textbox is then added to my array
+    animals.push(animalInput);
+    
+    // Clicking animal buttons displays ratings and gifs
+    renderButtons();
+
+    // User can hit "enter" instead of clicking on the button and it won't move to the next page
+    return false;
+}
